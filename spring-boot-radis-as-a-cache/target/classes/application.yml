@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: REDIS-SERVICE
+  datasource:
+    url: jdbc:h2:~/redis
+    driver-class-name: org.h2.Driver
+    username:
+    password:
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+      settings:
+        web-allow-others: true
+#spring:
+  cache:
+    type: redis
+  redis:
+    host: localhost
+    port: 6379
+    password:
+    cache-null-values: 'true'
+    time-to-live: 1h
